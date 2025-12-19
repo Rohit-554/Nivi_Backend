@@ -1,0 +1,14 @@
+ktor:
+  application:
+    modules:
+      - io.jadu.ApplicationKt.module
+  deployment:
+    port: 8080
+
+postgres:
+  url: "jdbc:postgresql://localhost:5433/nivi_db"
+  user: "myuser"
+  password: "mypassword"
+  domain: "https://jwt-provider-domain/"
+  audience: "jwt-audience"
+  realm: "ktor sample app"
