@@ -1,5 +1,6 @@
 package io.jadu
 
+import io.jadu.data.db.local.TransactionRepository
 import io.ktor.server.application.*
 
 fun main(args: Array<String>) {
@@ -7,6 +8,7 @@ fun main(args: Array<String>) {
 }
 
 fun Application.module() {
+    val repository = TransactionRepository()
     configureMonitoring()
     configureSerialization()
     configureDatabases()
