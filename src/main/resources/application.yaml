@@ -12,3 +12,9 @@ postgres:
   domain: "https://jwt-provider-domain/"
   audience: "jwt-audience"
   realm: "ktor sample app"
+
+jwt:
+  domain: "https://nivi-app.com/"   # Who issued the token (Can be fake for local)
+  audience: "nivi-users"            # Who is the token for
+  realm: "nivi-backend"             # Name of your security zone
+  secret: "x7z9-random-secret-key-12345-change-me-in-prod" # <--- The Secret Key

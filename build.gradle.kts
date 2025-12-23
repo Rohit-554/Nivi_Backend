@@ -31,4 +31,8 @@ dependencies {
     testImplementation(libs.ktor.server.test.host)
     testImplementation(libs.kotlin.test.junit)
     implementation("com.zaxxer:HikariCP:7.0.2")
+    implementation("org.mindrot:jbcrypt:0.4")
+    implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.7.1")
+    implementation("org.jetbrains.exposed:exposed-kotlin-datetime:0.61.0")
+
 }

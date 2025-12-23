@@ -3,6 +3,7 @@ package io.jadu
 import com.zaxxer.hikari.HikariConfig
 import com.zaxxer.hikari.HikariDataSource
 import io.jadu.data.db.local.TransactionTable
+import io.jadu.data.db.local.UserTable
 import io.ktor.server.application.*
 import kotlinx.coroutines.Dispatchers
 import org.jetbrains.exposed.sql.Database
@@ -28,7 +29,7 @@ fun Application.configureDatabases() {
     Database.connect(dataSource)
 
     transaction {
-        SchemaUtils.create(TransactionTable)
+        SchemaUtils.create(UserTable, TransactionTable)
     }
 
 
