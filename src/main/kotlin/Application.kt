@@ -17,5 +17,5 @@ fun Application.module() {
     configureSerialization()
     configureDatabases()
     configureSecurity()
-    configureRouting(userRepository, tokenManager)
+    configureRouting(userRepository, tokenManager, repository)
 }

@@ -1,7 +1,9 @@
 package io.jadu
 
+import io.jadu.data.db.local.TransactionRepository
 import io.jadu.data.db.local.UserRepository
 import io.jadu.routing.authRoute
+import io.jadu.routing.transactionalRoute
 import io.jadu.utils.TokenManager
 import io.ktor.http.*
 import io.ktor.server.application.*
@@ -9,7 +11,11 @@ import io.ktor.server.plugins.statuspages.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 
-fun Application.configureRouting(repository: UserRepository, tokenManager: TokenManager) {
+fun Application.configureRouting(
+    repository: UserRepository,
+    tokenManager: TokenManager,
+    transactionRepository: TransactionRepository
+) {
 
     install(StatusPages) {
         exception<Throwable> { call, cause ->
@@ -18,6 +24,8 @@ fun Application.configureRouting(repository: UserRepository, tokenManager: Token
     }
     routing {
         authRoute(repository, tokenManager)
+        transactionalRoute(transactionRepository)
+
         get("/") {
             call.respondText("Hello guys kaise ho aplog!")
         }

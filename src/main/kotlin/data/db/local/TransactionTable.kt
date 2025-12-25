@@ -1,7 +1,7 @@
 package io.jadu.data.db.local
 
 import org.jetbrains.exposed.sql.Table
-import org.jetbrains.exposed.sql.kotlin.datetime.date
+import org.jetbrains.exposed.sql.javatime.date
 
 enum class TransactionType { INCOME, EXPENSE }
 enum class Necessity { NEED, WANT, INVESTMENT }

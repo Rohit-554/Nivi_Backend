@@ -2,10 +2,10 @@ package io.jadu.data.db.local
 
 import io.jadu.data.model.Transaction
 import io.jadu.dbQuery
-import kotlinx.datetime.LocalDate
 import org.jetbrains.exposed.sql.ResultRow
 import org.jetbrains.exposed.sql.insert
 import org.jetbrains.exposed.sql.selectAll
+import java.time.LocalDate
 
 class TransactionRepository {
     private fun rowToTransaction(row: ResultRow)  = Transaction (
